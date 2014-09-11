@@ -1,20 +1,23 @@
 env:
-  use_env: 'grey'
-  grey: 'http://192.168.6.166:8070'
+  use_env: 'online'
+  grey: 'http://59.151.100.36:8070'
+  online: 'http://192.168.0.219:9025'
 
 http:
   get:
-    timeout: 1
+    timeout: 5
   post:
-    timeout: 1
+    timeout: 5
+  proxies:
+    http: 'http://59.151.122.199:9998'
 
 screen_print:
-  http_url: 0
-  http_code: 0
+  http_url: 1
+  http_code: 1
   http_body: 0
 
 log_conf:
   - name: 'ruce'
     file: './log/ruce.log'
     level: 'INFO'
-    format: '%(asctime)s %(levelname)s %(message)s %(filename)s:%(lineno)d'
+    format: '%(asctime)s %(levelname)s %(filename)s:%(lineno)d %(message)s'

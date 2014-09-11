@@ -161,16 +161,15 @@ class RuceCase(unittest.TestCase):
             self.ruce_log('[ code {} ]'.format(response.status_code))
             if int(print_code):
                 print '[   code {} ]'.format(response.status_code)
+            body_info = ''
             if len(response.text) > 300:
                 if int(print_body):
-                    body_msg = '[   body {0} ... {1} ]'.format(response.content[0:100], response.content[-100:])
-                    print body_msg
-                    self.ruce_log(body_msg)
+                    print '[   body {0} ... {1} ]'.format(response.content[0:100], response.content[-100:])
+                self.ruce_log('[ body {0} ... {1} ]'.format(response.content[0:100], response.content[-100:]))
             else:
                 if int(print_body):
-                    body_msg = '[   body {} ]'.format(response.content)
-                    print body_msg
-                    self.ruce_log(body_msg)
+                    print '[   body {} ]'.format(response.content)
+                self.ruce_log('[ body {} ]'.format(response.content))
             #assert int(response.status_code) >= 400, 'http status code is bigger than 400'
             res = {}
             res['code'] = response.status_code
