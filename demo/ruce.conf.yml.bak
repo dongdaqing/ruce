@@ -1,7 +1,7 @@
 env:
   use_env: 'online'
-  grey: 'http://192.168.6.7:8070'
-  online: 'http://192.168.6.9:9025'
+  grey: 'http://59.151.100.36:8070'
+  online: 'http://192.168.0.219:9025'
 
 http:
   get:
@@ -9,7 +9,7 @@ http:
   post:
     timeout: 5
   proxies:
-    http: 'http://192.1.22.19:9998'
+    http: 'http://59.151.122.199:9998'
 
 screen_print:
   http_url: 1
